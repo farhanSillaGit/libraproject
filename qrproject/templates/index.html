@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <!-- Add your home page content here -->
+
+    <!-- Add four image links here -->
+                <div class="image-link">
+                    <a href="{% url 'track_attendance' %}"> Attendance
+
+                    </a>
+                </div>
+
+
+            <div class="image-link">
+                    <a href="{% url 'security_patrol' %}">Security Patrol Log
+
+                    </a>
+                </div>
+
+                <!-- Add more image links as needed -->
+</div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}attendance{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h3>Attendance </h3>
+        <p>Please complete the following details regarding attendance</p>
+        <form id="myForm2" action="{% url 'form_submission' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="column-container">
+
+            <div class="left-column">
+
+                    <div class="form-group">
+                        <label for="siteId2">Site Code:<span class="required">*</span></label>
+                        <input type="text" id="siteId2" name="siteId" required style="width: 250px; height:35px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="time2">Time:<span class="required">*</span></label>
+                        <input type="text" id="time2" name="time" required readonly  style="width: 250px; height:35px;">
+
+                    </div>
+                    <div class="form-group">
+    <label>Status:<span class="required">*</span></label>
+    <div class="radio-group">
+        <input type="radio" id="checkin2" name="status" value="checkin">
+        <label for="checkin2">Check in</label><br>
+        <input type="radio" id="checkout2" name="status" value="checkout">
+        <label for="checkout2">Check out</label>
+    </div>
+</div>
+
+            </div>
+            <div class="right-column">
+
+                    <div class="form-group">
+                        <label for="date2">Date:<span class="required">*</span></label>
+                        <input type="date" id="date2" name="date" required readonly style="width: 250px; height:35px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Shift:<span class="required">*</span></label>
+    <div class="radio-group">
+        <input type="radio" id="day2" name="shift" value="day">
+        <label for="day2">Day</label><br>
+        <input type="radio" id="night2" name="shift" value="night">
+        <label for="night2">Night</label>
+    </div>
+</div>
+
+                    <div class="form-group">
+                        <label for="employeeId2">Employee ID:<span class="required">*</span></label>
+                        <input type="text" id="employeeId2" name="employeeId" required style="width: 250px; height:35px;">
+                    </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="submit">
+            <button type="submit" >Submit</button>
+        </div>
+            </form>
+        <div id="feedback"></div>
+    </div>
+
+{% endblock %}

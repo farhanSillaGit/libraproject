@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Title{% endblock %}</title>
+    <!-- Add your CSS files here -->
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% endblock %}
+</head>
+<body>
+<div class="header">
+    <h2>Services</h2>
+    <p>Please select the service</p>
+    <nav>
+            <ul>
+                <a href="{% url 'home' %}" style="color: white;">Home</a>
+                <a href="{% url 'track_attendance' %}" style="color: white;">Attendance</a>
+
+
+                <a href="{% url 'security_patrol' %}" style="color: white;">Security Patrol Log</a>
+                <!-- Add more links as needed -->
+            </ul>
+        </nav>
+</div>
+
+    <main>
+        <!-- Container for main content -->
+
+
+        {% block content %}
+        <!-- Content from child templates will be placed here -->
+        {% endblock %}
+
+
+
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+
+    </footer>
+
+    <!-- Add your JavaScript files here -->
+    <script src="https://rawgit.com/cozmo/jsQR/master/dist/jsQR.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
